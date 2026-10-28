@@ -27,19 +27,19 @@ public class LoginControler {
         return "login";
     }
 
-    @GetMapping("/cadastro")
+    @GetMapping("cadastro")
     public String cadastro() {
-        return "/cadastro";
+        return "cadastro";
     }
 
-    @PostMapping("/efetuar_cadastro")
+    @PostMapping("efetuar_cadastro")
     public String efetuar_cadastro(Usuario usuario) {
         log.info(usuario.toString());
         service.CadastrarUsuario(usuario);
         return "cadastro-success";
     }
 
-    @PostMapping("/autenticar")
+    @PostMapping("autenticar")
     public String autenticar(String email, String senha) {
         Usuario user = service.BuscaUsuarioPorEmail(email);
 
